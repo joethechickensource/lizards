@@ -105,7 +105,11 @@ function getColor(h, b){
 	if(window.location.search == "?cb=1")
 		return "hsl(" + (180 + h % 360 / 2) + ", 100%, " + (b == undefined ? 50 : b) + "%)";
 	if(window.location.search == "?cb=2")
-		return "hsl(0, 0%, " + Math.min(b == undefined ? 100 : b, h % 360 / 3.6) + "%)";
+		return "hsl(0, 0%, " +  h % 360 / 360 * (b == undefined ? 100 : b * 2) + "%)";
+	if(window.location.search == "?cb=3")
+		return "hsl(" + (0 + h % 360 / 2) + ", 100%, " + (b == undefined ? 50 : b) + "%)";
+	if(window.location.search == "?cb=4")
+		return "hsl(" + (270 + h % 360 / 2) + ", 100%, " + (b == undefined ? 50 : b) + "%)";
 	return "hsl(" + h + ", 60%, " + (b == undefined ? 50 : b) + "%)";
 }
 
@@ -671,5 +675,4 @@ function menu(){
 	}
 }
 menu();
-	
 </script>
