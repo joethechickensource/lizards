@@ -101,7 +101,10 @@ function getWH(){
 	}
 }
 
-function getColor(h, b){
+function getColor(h, b, l){
+	if(l && key.keyCode) {
+		return "hsl(0,0%,100%)";
+	}
 	if(window.location.search == "?cb=1")
 		return "hsl(" + (180 + h % 360 / 2) + ", 100%, " + (b == undefined ? 50 : b) + "%)";
 	if(window.location.search == "?cb=2")
